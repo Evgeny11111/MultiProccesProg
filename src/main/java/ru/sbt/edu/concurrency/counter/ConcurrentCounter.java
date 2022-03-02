@@ -4,7 +4,7 @@ import java.util.concurrent.Semaphore;
 
 public class ConcurrentCounter implements Counter{
     private long value;
-    private Semaphore semaphore;
+    private final Semaphore semaphore;
 
     public ConcurrentCounter() {
         this.semaphore = new Semaphore(1,true);
