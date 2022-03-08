@@ -16,10 +16,10 @@ public class ConcurrentCounter implements Counter{
         try {
             semaphore.acquire();
             value++;
+            semaphore.release();
         }catch (Exception e){
             e.printStackTrace();
         }
-        semaphore.release();
     }
 
     @Override
